@@ -132,12 +132,16 @@ article {
     z-index: 1;
 }
 
+.overlay-open {
+    display: block;
+}
+
 .app {
     width: 300px;
     height: 500px;
     padding: 1.5rem;
     margin: 0 auto;
-    background: #FFFFFF;
+    background: rgba(244, 194, 127, 0.67);
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
     border: 5px solid #abcea1;
     border-radius: 8px;
@@ -145,7 +149,7 @@ article {
 
 .app__title {
     padding-bottom: 2rem;
-    font-size: 2.8rem;
+    font-size: 3rem;
     text-align: center;
 }
 
@@ -153,7 +157,7 @@ article {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(171, 206, 161, 0.35);
+    background: #E5E5E5;
     padding: 1rem 1rem;
     border-radius: 5px;
     cursor: pointer;
@@ -171,16 +175,16 @@ article {
 }
 
 .tasks__title {
-    padding-top: 2rem;
+    padding: 2rem;
     font-size: 2.2rem;
-    font-weight: 500;
+    font-weight: 700;
     text-align: center;
 }
 
 /* Modal */
 
 .modal {
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     gap: 0.4rem;
@@ -192,6 +196,11 @@ article {
     background: #FFFFFF;
     border: 1px solid #ddd;
     border-radius: 15px;
+    z-index: 10;
+}
+
+.modal-open {
+    display: flex;
 }
 
 .modal-content {
@@ -233,6 +242,10 @@ article {
     border: 1px solid #ddd;
     border-radius: 5px;
     font-size: 1rem;
+}
+
+#error-message {
+    color: #FF4742;
 }
 
 /* Modal footer */
@@ -313,4 +326,52 @@ article {
     display: flex;
     justify-content: flex-end;
     gap: 1rem
+}
+
+
+/* Tasks */
+
+#tasks {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
+}
+
+.tasks__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem;
+    background: #E5E5E5;
+    border-radius: 6px;
+}
+
+.task__header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.tasks__text {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.tasks__date {
+    font-size: 1.2rem;
+}
+
+.tasks__description {
+    font-size: 1.3rem;
+}
+
+.tasks__icons {
+    display: flex;
+    justify-self: center;
+    gap: 1rem;
+}
+
+.icon {
+    cursor: pointer;
 }

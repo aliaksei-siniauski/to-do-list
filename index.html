@@ -25,25 +25,26 @@
 
     <!-- Modal -->
 
-    <form class="modal fade" id="form" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <form class="modal" id="form" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal__content">
             <div class="modal-header">
                 <h5 class="modal__title" id="exampleModalLabel">Add New Task</h5>
-                <i class="fa fa-times" aria-hidden="true"></i>
+                <i class="fa fa-times icon-close" aria-hidden="true"></i>
 
             </div>
             <div class="modal-body">
                 <p class="modal-body__title">Task Title</p>
-                <input class="form-control" name="" type="text" id="textInput" />
+                <input id="textInput" class="form-control" name="" type="text" />
+                <div id="error-message"></div>
                 <br />
                 <p class="modal-body__title">Due Date</p>
-                <input class="form-control" name="" type="date" id="dateInput" />
+                <input id="dateInput" class="form-control" name="" type="date" />
                 <br />
                 <p class="modal-body__title">Description</p>
                 <textarea name="" class="form-control" id="textarea" cols="30" rows="5"></textarea>
             </div>
             <div class="modal-footer">
-                <button type="button" class="button button-secondary" data-bs-dismiss="modal">
+                <button type="button" class="button button-secondary">
                     Close
                 </button>
                 <button type="submit" id="add" class="button button-primary">Add</button>
