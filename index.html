@@ -6,10 +6,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ToDo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="body">
+    <div class="overlay"></div>
+    <div class="app">
+        <h1 class="app__title">TODO APP</h1>
+        <div class="new-task">
+            <span class="new-task__title">Add New Task</span>
+            <i class="fas fa-plus"></i>
+        </div>
+        <h2 class="tasks__title">Tasks</h2>
+        <div id="tasks"></div>
+    </div>
+
+    <!-- Modal -->
+
+    <form class="modal fade" id="form" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal__content">
+            <div class="modal-header">
+                <h5 class="modal__title" id="exampleModalLabel">Add New Task</h5>
+                <i class="fa fa-times" aria-hidden="true"></i>
+
+            </div>
+            <div class="modal-body">
+                <p class="modal-body__title">Task Title</p>
+                <input class="form-control" name="" type="text" id="textInput" />
+                <br />
+                <p class="modal-body__title">Due Date</p>
+                <input class="form-control" name="" type="date" id="dateInput" />
+                <br />
+                <p class="modal-body__title">Description</p>
+                <textarea name="" class="form-control" id="textarea" cols="30" rows="5"></textarea>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="button button-secondary" data-bs-dismiss="modal">
+                    Close
+                </button>
+                <button type="submit" id="add" class="button button-primary">Add</button>
+            </div>
+        </div> <!-- close modal-content -->
+    </form>
 
 </body>
 <script src="index.js"></script>

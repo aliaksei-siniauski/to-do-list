@@ -1,0 +1,316 @@
+/*Basic styles*/
+
+html {
+    box-sizing: border-box;
+    font-size: 100%;
+    font-size: 10px;
+    scroll-behavior: smooth;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+blockquote,
+dl,
+dd,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"],
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Set core root defaults */
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+section,
+main,
+footer,
+header,
+article {
+    display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+
+
+/* ToDO */
+
+.body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0 50px;
+    background: #e5e5e5;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    overflow: hidden;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+    z-index: 1;
+}
+
+.app {
+    width: 300px;
+    height: 500px;
+    padding: 1.5rem;
+    margin: 0 auto;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+    border: 5px solid #abcea1;
+    border-radius: 8px;
+}
+
+.app__title {
+    padding-bottom: 2rem;
+    font-size: 2.8rem;
+    text-align: center;
+}
+
+.new-task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(171, 206, 161, 0.35);
+    padding: 1rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.new-task__title {
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.fa-plus {
+    background-color: #abcea1;
+    padding: .3rem;
+    border-radius: 3px;
+}
+
+.tasks__title {
+    padding-top: 2rem;
+    font-size: 2.2rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* Modal */
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.4rem;
+    width: 450px;
+    min-height: 350px;
+    padding: 1.3rem;
+    position: absolute;
+    top: 20%;
+    background: #FFFFFF;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.modal__title {
+    font-size: 1.7rem;
+}
+
+.fa-times {
+    cursor: pointer;
+}
+
+/* Modal body */
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+    padding: 2rem 0;
+}
+
+.modal-body__title {
+    font-size: 1.4rem;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.7rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* Modal footer */
+
+.button {
+    display: inline-flex;
+    justify-content: center;
+    padding: 1rem 3rem;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 6px;
+    transition: ease-in-out .3s;
+    cursor: pointer;
+}
+
+.button-primary {
+    align-items: center;
+    appearance: none;
+    background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
+    border-radius: 6px;
+    box-shadow: rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, rgba(58, 65, 111, .5) 0 -3px 0 inset;
+    color: #FFFFFF;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow, transform;
+}
+
+.button-primary:focus {
+    box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+}
+
+.button-primary:hover {
+    box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+    transform: translateY(-2px);
+}
+
+.button-primary:active {
+    box-shadow: #3c4fe0 0 3px 7px inset;
+    transform: translateY(2px);
+    opacity: .5;
+}
+
+.button-secondary {
+
+    background: #FF4742;
+    color: #FFFFFF;
+    box-shadow: rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, rgba(58, 65, 111, .5) 0 -3px 0 inset;
+    text-rendering: geometricprecision;
+    text-transform: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button-primary:focus {
+    box-shadow: #FF4742 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+}
+
+.button-secondary:hover {
+    box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #FF4742,
+        0 -3px 0 inset;
+    transform: translateY(-2px);
+}
+
+
+
+.button-secondary:active {
+    box-shadow: #FF4742 0 3px 7px inset;
+    transform: translateY(2px);
+    opacity: .5;
+
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem
+}
